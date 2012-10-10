@@ -66,5 +66,32 @@ namespace RandomTimer.Properties {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The random timer has elapsed..
+        /// </summary>
+        internal static string ElapsedMessage {
+            get {
+                return ResourceManager.GetString("ElapsedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Running ....
+        /// </summary>
+        internal static string RunningLabel {
+            get {
+                return ResourceManager.GetString("RunningLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stopped..
+        /// </summary>
+        internal static string StoppedLabel {
+            get {
+                return ResourceManager.GetString("StoppedLabel", resourceCulture);
+            }
+        }
     }
 }

@@ -121,4 +121,13 @@
   <data name="Clock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clock.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ElapsedMessage">
+    <value xml:space="preserve">The random timer has elapsed.</value>
+  </data>
+  <data name="StoppedLabel">
+    <value xml:space="preserve">Stopped.</value>
+  </data>
+  <data name="RunningLabel">
+    <value xml:space="preserve">Running ...</value>
+  </data>
 </root>

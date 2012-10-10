@@ -45,7 +45,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(12, 40);
+            this.StartButton.Location = new System.Drawing.Point(55, 56);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(75, 29);
             this.StartButton.TabIndex = 1;
@@ -55,8 +55,9 @@
             // 
             // StopButton
             // 
+            this.StopButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.StopButton.Enabled = false;
-            this.StopButton.Location = new System.Drawing.Point(93, 40);
+            this.StopButton.Location = new System.Drawing.Point(136, 56);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(75, 29);
             this.StopButton.TabIndex = 2;
@@ -99,9 +100,9 @@
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusStripLabel});
-            this.StatusStrip.Location = new System.Drawing.Point(0, 82);
+            this.StatusStrip.Location = new System.Drawing.Point(0, 95);
             this.StatusStrip.Name = "StatusStrip";
-            this.StatusStrip.Size = new System.Drawing.Size(181, 25);
+            this.StatusStrip.Size = new System.Drawing.Size(263, 25);
             this.StatusStrip.TabIndex = 3;
             // 
             // StatusStripLabel
@@ -112,20 +113,26 @@
             // 
             // DurationNumericUpDown
             // 
+            this.DurationNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DurationNumericUpDown.Location = new System.Drawing.Point(12, 12);
             this.DurationNumericUpDown.Name = "DurationNumericUpDown";
-            this.DurationNumericUpDown.Size = new System.Drawing.Size(156, 22);
+            this.DurationNumericUpDown.Size = new System.Drawing.Size(240, 38);
             this.DurationNumericUpDown.TabIndex = 0;
             // 
             // Main
             // 
+            this.AcceptButton = this.StartButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(181, 107);
+            this.CancelButton = this.StopButton;
+            this.ClientSize = new System.Drawing.Size(263, 120);
             this.Controls.Add(this.DurationNumericUpDown);
             this.Controls.Add(this.StatusStrip);
-            this.Controls.Add(this.StopButton);
             this.Controls.Add(this.StartButton);
+            this.Controls.Add(this.StopButton);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(281, 165);
+            this.MinimumSize = new System.Drawing.Size(281, 165);
             this.Name = "Main";
             this.Text = "Random Timer";
             this.Resize += new System.EventHandler(this.Main_Resize);
