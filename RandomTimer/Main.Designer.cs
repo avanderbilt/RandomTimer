@@ -38,6 +38,8 @@
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusStripLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DurationNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.StatusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DurationNumericUpDown)).BeginInit();
@@ -77,9 +79,11 @@
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StartContextMenuItem,
-            this.StopContextMenuItem});
+            this.StopContextMenuItem,
+            this.toolStripSeparator1,
+            this.exitContextMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(153, 74);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 104);
             // 
             // StartContextMenuItem
             // 
@@ -119,6 +123,18 @@
             this.DurationNumericUpDown.Size = new System.Drawing.Size(240, 38);
             this.DurationNumericUpDown.TabIndex = 0;
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // exitContextMenuItem
+            // 
+            this.exitContextMenuItem.Name = "exitContextMenuItem";
+            this.exitContextMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.exitContextMenuItem.Text = "Exit";
+            this.exitContextMenuItem.Click += new System.EventHandler(this.exitContextMenuItem_Click);
+            // 
             // Main
             // 
             this.AcceptButton = this.StartButton;
@@ -156,5 +172,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem StartContextMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StopContextMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem exitContextMenuItem;
     }
 }

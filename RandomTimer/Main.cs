@@ -67,6 +67,11 @@ namespace RandomTimer
             StopTimer();
         }
 
+        private void exitContextMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void Main_Resize(object sender, EventArgs e)
         {
             switch (WindowState)
