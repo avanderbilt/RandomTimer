@@ -35,11 +35,11 @@
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.StartContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StopContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.exitContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.StatusStrip = new System.Windows.Forms.StatusStrip();
             this.StatusStripLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.DurationNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.exitContextMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.StatusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DurationNumericUpDown)).BeginInit();
@@ -72,7 +72,6 @@
             this.NotifyIcon.ContextMenuStrip = this.contextMenuStrip;
             this.NotifyIcon.Text = "NotifyIcon";
             this.NotifyIcon.Visible = true;
-            this.NotifyIcon.BalloonTipClicked += new System.EventHandler(this.NotifyIcon_BalloonTipClicked);
             this.NotifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
             // 
             // contextMenuStrip
@@ -100,6 +99,18 @@
             this.StopContextMenuItem.Text = "Stop";
             this.StopContextMenuItem.Click += new System.EventHandler(this.StopContextMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // exitContextMenuItem
+            // 
+            this.exitContextMenuItem.Name = "exitContextMenuItem";
+            this.exitContextMenuItem.Size = new System.Drawing.Size(152, 24);
+            this.exitContextMenuItem.Text = "Exit";
+            this.exitContextMenuItem.Click += new System.EventHandler(this.exitContextMenuItem_Click);
+            // 
             // StatusStrip
             // 
             this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -122,18 +133,6 @@
             this.DurationNumericUpDown.Name = "DurationNumericUpDown";
             this.DurationNumericUpDown.Size = new System.Drawing.Size(240, 38);
             this.DurationNumericUpDown.TabIndex = 0;
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // exitContextMenuItem
-            // 
-            this.exitContextMenuItem.Name = "exitContextMenuItem";
-            this.exitContextMenuItem.Size = new System.Drawing.Size(152, 24);
-            this.exitContextMenuItem.Text = "Exit";
-            this.exitContextMenuItem.Click += new System.EventHandler(this.exitContextMenuItem_Click);
             // 
             // Main
             // 

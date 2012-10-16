@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using RandomTimer.Properties;
 
@@ -9,23 +10,34 @@ namespace RandomTimer
         private readonly Random _random;
         private readonly Timer _timer;
 
+        private readonly Notification _notification;
+
         public Main()
         {
             InitializeComponent();
-            
+
             _random = new Random();
-            
+
             Icon = Resources.Clock;
             Opacity = 0.90;
-            
+
             _timer = new Timer();
             _timer.Tick += new EventHandler(Timer_Tick);
-            
+
             Icon = Resources.Clock;
 
             NotifyIcon.Icon = Resources.Clock;
             NotifyIcon.Text = Resources.StoppedLabel;
-            NotifyIcon.BalloonTipText = Resources.ElapsedMessage;
+
+            _notification = new Notification
+            {
+                StartPosition = FormStartPosition.Manual
+            };
+
+            _notification.Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - _notification.Width - 10,
+                                 Screen.PrimaryScreen.WorkingArea.Bottom - _notification.Height - 10);
+
+            _notification.ResetButton.Click += NotificationResetButton_Click;
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -42,7 +54,7 @@ namespace RandomTimer
         {
             _timer.Stop();
 
-            NotifyIcon.ShowBalloonTip(30*1000);
+            ShowNotificationWindow();
 
             EnableStart();
         }
@@ -52,9 +64,10 @@ namespace RandomTimer
             WindowState = FormWindowState.Normal;
         }
 
-        private void NotifyIcon_BalloonTipClicked(object sender, EventArgs e)
+        private void NotificationResetButton_Click(object sender, EventArgs e)
         {
             StartTimer();
+            _notification.Hide();
         }
 
         private void StartContextMenuItem_Click(object sender, EventArgs e)
@@ -93,11 +106,11 @@ namespace RandomTimer
             if (DurationNumericUpDown.Value == 0)
                 return;
 
-            var randomInterval = _random.Next((int)DurationNumericUpDown.Value * 1000 * 60);
+            var randomInterval = _random.Next((int) DurationNumericUpDown.Value*1000*60);
 
             _timer.Interval = randomInterval;
             _timer.Start();
- 
+
             EnableStop();
         }
 
@@ -133,6 +146,11 @@ namespace RandomTimer
             StopContextMenuItem.Enabled = true;
             DurationNumericUpDown.Enabled = false;
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void ShowNotificationWindow()
+        {
+            _notification.Show();
         }
     }
 }
